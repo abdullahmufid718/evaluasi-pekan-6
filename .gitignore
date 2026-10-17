@@ -1,0 +1,7 @@
+# Isi file .gitignore
+
+# Folder dependensi Node.js
+node_modules/
+
+# File konfigurasi rahasia
+.env
