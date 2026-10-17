@@ -457,3 +457,18 @@ for (let trx of transaksiBersih) {
 
 // Kembalikan TARGET_KAS ke nilai besar (jika diperlukan untuk proses berikutnya)
 const TARGET_KAS = 10000000;
+
+// Jawab dalam komentar:
+
+// 1.Karena this merujuk pada objek kasir itu sendiri tempat method tersebut berada. 
+// Menulis this.menu memastikan method mengakses properti internal milik objek kasir tersebut, bukan variabel global luar.
+// 2.Karena switch sangat ideal untuk mencocokkan satu nilai ke banyak kondisi spesifik. 
+// Kita sengaja menggabungkan kasus "jumat" dan "jum'at" serta "sabtu", "minggu", dan "ahad" tanpa break agar kondisi-kondisi berbeda tersebut meneruskan aliran kode ke blok pengeksekusi diskon yang sama secara efisien.
+// 3.Karena properti .length bernilai 0 untuk array kosong. Di JavaScript, angka 0 bersifat falsy, sehingga diberi tanda seru (!) akan menghasilkan true (dianggap kosong).
+// Tiga contoh nilai Falsy: 0, "" (string kosong), dan null. 
+// 4.break: Digunakan untuk menghentikan seluruh perulangan (misalnya saat target kas tercapai)
+// continue: Digunakan untuk melewatkan iterasi saat ini dan langsung lanjut ke item berikutnya (misalnya saat melewati item pesanan yang tidak valid).
+// 5.Karena sistem kasir membutuhkan data audit yang transparan: tidak hanya tahu total harga uangnya, 
+// tetapi juga mencatat daftar item mana yang valid dan item mana yang ditolak beserta alasannya.
+// 6. Karena Perulangan while dipakai untuk mengurangi sisa uang secara berulang selama nominal pecahan masih mencukupi lembar uang tersebut.
+// Bisa diganti, bahkan pada kode di atas kita sudah memadukannya dengan operator / (Math.floor) dan % (sisaKembalian %= pecahanNominal) agar perhitungan lembar uang jauh lebih cepat dan efisien tanpa looping berulang.
