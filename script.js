@@ -160,6 +160,23 @@ for (let transaksi of transaksiMentah) {
 // Mencetak hasil transaksiBersih ke console
 console.log(transaksiBersih);
 
+// Jawab dalam komentar:
 
-
-
+// 1.Perbedaan parseInt, parseFloat, dan Number :
+// a.Number(): Mengubah seluruh teks menjadi angka secara utuh. Jika ada satu karakter saja yang bukan angka (selain titik desimal valid), hasilnya NaN.
+// b.parseInt(): Mengambil angka dari depan teks dan hanya menghasilkan bilangan bulat (titik desimal dan angka di belakangnya dibuang).
+// c.parseFloat(): Mengambil angka dari depan teks dan membolehkan pecahan/desimal.
+//  Kenapa ubahKeAngka harus menghapus titik terlebih dahulu? = Karena di JavaScript (dan standar internasional), titik (.) dibaca sebagai pemisah desimal, bukan pemisah ribuan. 
+// Jika teksnya "150.000", JavaScript akan mengira itu adalah angka pecahan 150 koma 000, bukan seratus lima puluh ribu.
+// Apa hasil parseInt("150.000")?, hasil nya adalah 150 karena parseInt akan berhenti membaca begitu menemukan tanda titik pertama.
+// 2.toFixed mengembalikan teks atau angka? = teks
+// Buktikan dengan typeof 
+// = let angka = (10).toFixed(2);
+// console.log(typeof angka);
+// tunjukkan akibatnya jika hasil toFixed langsung dijumlahkan dengan angka. 
+// = let hasil = (10).toFixed(2) + 5; 
+// console.log(hasil); // Output: "10.005" (bukan 15), Terjadi penggabungan teks (string concatenation), bukan penjumlahan matematika.
+// 3.replace(): Hanya mengubah kecocokan pertama yang ditemukan pada teks.
+// replaceAll(): Mengubah seluruh kecocokan yang ditemukan dari awal sampai akhir teks.
+// 4.Karena tipe data string di JavaScript bersifat tidak bisa diubah langsung (immutable). Method seperti toUpperCase() tidak merusak string aslinya, melainkan membuat dan mengembalikan string baru di memori.
+// 5. 
