@@ -180,3 +180,4 @@ console.log(transaksiBersih);
 // replaceAll(): Mengubah seluruh kecocokan yang ditemukan dari awal sampai akhir teks.
 // 4.Karena tipe data string di JavaScript bersifat tidak bisa diubah langsung (immutable). Method seperti toUpperCase() tidak merusak string aslinya, melainkan membuat dan mengembalikan string baru di memori.
 // 5. 
+
